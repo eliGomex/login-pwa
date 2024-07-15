@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1 id="welcome-message"></h1>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var currentUser = JSON.parse(localStorage.getItem("currentUser"));
+            if (currentUser) {
+                document.getElementById("welcome-message").innerText = `Bem-vindo, ${currentUser.name}!`;
+            } else {
+                window.location.href = "index.html"; 
+            }
+        });
+    </script>
+</body>
+</html>
